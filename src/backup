@@ -1,0 +1,97 @@
+  <div className="container-fluid">
+                <div className="contentBox contentBoxActivity">
+                    <div className="dd-form-words size-lg">
+                        {showAudio ? (
+                            showDualAudio ? (
+                                <div className="row no-gutters">
+                                    <div className="col-12">
+                    <span className="audioAccentsContainer mb-5">
+                      {this.props.pageData.viewData[0].audiobuttons.map(
+                          (item, i) => (
+                              <DualAudioButton
+                                  key={i}
+                                  buttonStyle={
+                                      "button-audio accent button-lg flag" +
+                                      item.location
+                                  }
+                                  audioSrc={item.audio}
+                              />
+                          )
+                      )}
+                    </span>
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className="row no-gutters">
+                                    <div className="col-12">
+                                        {this.props.pageData.viewData[0].audiobuttons.map(
+                                            (item, i) => (
+                                                <AudioButton
+                                                    key={i}
+                                                    styling={item.audio === "" ? ("button-audio button-lg no-sound" + (this.spanData ? "" : (" mb-5"))) : ("button-audio button-lg" + (this.spanData ? "" : (" mb-5")))}
+                                                    audioSrc={item.audio}
+                                                />
+                                            )
+                                        )}
+                                    </div>
+                                </div>
+                            )
+                        ) : (
+                            <React.Fragment/>
+                        )}
+
+                        <div className="row no-gutters">
+                          <h3 >Oreo Cheesecake</h3>
+
+
+
+
+
+                            <div className="col-12">
+                              <p>Now to
+                                <div key={0} className="droppableBox dd-word width-4em">
+                                    <Droppable
+                                        key={this.droppables[0][0]}
+                                        targetKey={this.droppables[0][0]}
+                                        name={this.droppables[0][0]}
+                                        triggerDrop={this.triggerDrop}
+                                    /></div>
+                                the cake. <div key={1} className="droppableBox dd-word width-4em">
+                                <Droppable
+                                    key={this.droppables[0][1]}
+                                    targetKey={this.droppables[0][1]}
+                                    name={this.droppables[0][1]}
+                                    triggerDrop={this.triggerDrop}
+                                /></div>with big Oreo pieces at the bottom. <div key={2} className="droppableBox dd-word width-4em">
+                                <Droppable
+                                    key={this.droppables[0][2]}
+                                    targetKey={this.droppables[0][2]}
+                                    name={this.droppables[0][2]}
+                                    triggerDrop={this.triggerDrop}
+                                /></div>
+                                the cream mix on top. <div key={3} className="droppableBox dd-word width-5em">
+                                <Droppable
+                                    key={this.droppables[0][3]}
+                                    targetKey={this.droppables[0][3]}
+                                    name={this.droppables[0][3]}
+                                    triggerDrop={this.triggerDrop}
+                                /></div> with some more big pieces of Oreo and that's it. Your Oreo cheesecake <div
+                                key={4} className="droppableBox dd-word width-4em">
+                                <Droppable
+                                    key={this.droppables[0][4]}
+                                    targetKey={this.droppables[0][4]}
+                                    name={this.droppables[0][4]}
+                                    triggerDrop={this.triggerDrop}
+                                /></div> ready. </p>
+
+
+                            </div>
+                        </div>
+                        <div className="row no-gutters">
+                            <div className="col-12">
+                                <div className="drag-source-box ">{draggables}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> </div>
