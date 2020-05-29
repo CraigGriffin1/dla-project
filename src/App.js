@@ -3,9 +3,13 @@ import './App.css';
 
 
 
-import Video from "./Video"
-import CompleteTheParagraph from "./CompleteTheParagraph";
-import ConveyorBelt from "./ConveyorBelt";
+import Video from "./components/Video";
+import CompleteTheParagraph from "./components/CompleteTheParagraph";
+import ConveyorBelt from "./components/ConveyorBelt";
+import UnscrambleWord from "./components/UnscrambleWord";
+import MatchPairs from "./components/MatchPairs";
+
+
 
 
 function App() {
@@ -19,9 +23,34 @@ function App() {
              />
 
 
-            <ConveyorBelt />
+             <MatchPairs/>
 
-            <ConveyorBelt />
+
+
+
+            <ConveyorBelt
+
+                beltItems =
+                    {["cookies", "sugar", "cheesecake", "cream cheese", "lemonade", "mango water", "lemon", "whipped cream", "eggs", "flour", "milk", "banana",]}
+                correctItems = {["cookies", "sugar", "cheesecake", "cream cheese", "lemonade", "mango water", "lemon", "whipped cream"]}
+                wordContainer = {["", ",", "", ",", "", ",", "", ",", "", ",", "", ",", "", ",", ""]}
+            />
+
+            <ConveyorBelt
+
+                beltItems ={["lemon", "eggs", "milk", "banana","toothbrush","comb","pin","carrot","oilwell"]}
+                correctItems = {["lemon", "eggs", "milk", "banana"]}
+                wordContainer = {["", ",", "", ",", "", ",", ""]}
+                image="true"
+            />
+
+            <UnscrambleWord
+                pageTitle ="Unscramble The Words"
+
+
+            />
+
+
 
             <CompleteTheParagraph
                 pageTitle="Oreo Cheesecake"

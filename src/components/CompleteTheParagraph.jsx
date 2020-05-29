@@ -194,7 +194,7 @@ class CompleteTheParagraph extends Component {
 
                                     </div>
 
-                           
+
                                     <div className="row">
                                         <div className="col-12">
                                             <hr/>

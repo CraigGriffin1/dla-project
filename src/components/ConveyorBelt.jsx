@@ -4,14 +4,13 @@ import AudioButton from "./AudioButton";
 class ConveyorBelt extends Component {
     constructor(props) {
         super(props);
-        this.beltItems = ["cookies", "sugar", "cheesecake", "cream cheese", "lemonade", "mango water", "lemon", "whipped cream",
-            "eggs", "flour", "milk", "banana",];
-        this.audio = "this.props.pageData.viewData[0].audio";
+        this.beltItems = this.props.beltItems;
+        this.audio = "https://k2l.bndry.co.uk/basicskills/audio/words/apple.m4a";
         this.beltItems = this.beltItems.sort(function () {
             return Math.random() - Math.random()
         });
-        this.correctItems = ["cookies", "sugar", "cheesecake", "cream cheese", "lemonade", "mango water", "lemon", "whipped cream"];
-        this.wordContainer = ["", ",", "", ",", "", ",", "", ",", "", ",", "", ",", "", ",", ""];
+        this.correctItems = this.props.correctItems;
+        this.wordContainer = this.props.wordContainer;
         this.itemsStatus = [];
         for (let i = 0; i < this.beltItems.length; i++) {
             this.itemsStatus.push("");
@@ -54,7 +53,9 @@ class ConveyorBelt extends Component {
                                 "box " + (this.state.liftBox && i === 2 ? " lift " : "")
                             }
                         >
-                            {this.state.beltItems[i]}
+                            {!this.props.image? this.state.beltItems[i] : <img width="55%" src={"https://k2l.bndry.co.uk/basicskills/img/words/" +this.state.beltItems[i] + ".png"}/>}
+                            {/*<img width="55%" src={this.state.beltItems[i] }/>*/}
+                            {/**/}
                         </p>
                     )}
                 </li>
@@ -277,7 +278,7 @@ class ConveyorBelt extends Component {
     playAudio = () => {
         var audio = new Audio(this.audio);
         audio.load();
-        audio.play();
+        //audio.play();
     }
 
     render() {
