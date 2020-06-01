@@ -14,7 +14,7 @@ import AudioButton from "./AudioButton";
 class WordSlot extends Component {
     render() {
         return (
-            <div className="droppableBox dd-word width-5em">
+            <div className="droppableBox dd-word width-5em ">
                 <Droppable
                     key={this.props.word}
                     targetKey={this.props.word}
@@ -179,7 +179,7 @@ class CompleteTheParagraph extends Component {
                                             <img width="50%" height="50%" class="img-fluid"
                                                  src={this.props.pageImage}/>
 
-                                            <button className="button-audio button-lg mb-5"></button>
+                                            <button className="button-audio button-lg mb-5"></button> <hr />
                                         </div>
                                     </div>
 
@@ -204,7 +204,7 @@ class CompleteTheParagraph extends Component {
                                         <div className="col-12">
                                             <div className="row no-gutters">
                                                 <div className="col-12">
-                                                    <div className="drag-source-box ">{draggables}</div>
+                                                    <div className="drag-source-box  ">{draggables}</div>
                                                 </div>
 
                                             </div>

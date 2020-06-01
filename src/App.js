@@ -1,6 +1,12 @@
 import React from 'react';
 import './App.css';
 
+import {
+        BrowserRouter as Router,
+        Switch,
+        Route,
+        Link
+} from "react-router-dom";
 
 
 import Video from "./components/Video";
@@ -10,46 +16,128 @@ import UnscrambleWord from "./components/UnscrambleWord";
 import MatchPairs from "./components/MatchPairs";
 
 
-
-
 function App() {
     return (
+/*
+
+        <Router>
+                <div>
+                        <ul>
+                                <li>
+                                        <Link to="/">Home</Link>
+                                </li>
+                                <li>
+                                        <Link to="/about">About</Link>
+                                </li>
+                                <li>
+                                        <Link to="/dashboard">Dashboard</Link>
+                                </li>
+                        </ul>
+
+                        <hr />
+
+                        {/!*
+          A <Switch> looks through all its children <Route>
+          elements and renders the first one whose path
+          matches the current URL. Use a <Switch> any time
+          you have multiple routes, but you want only one
+          of them to render at a time
+        *!/}
+                        <Switch>
+                                <Route exact path="/">
+                                        <Video videoUrl="https://k2l.bndry.co.uk/basicskills/video/intro.mp4"
+                                               videoPoster="https://k2l.bndry.co.uk/basicskills/video/intro.jpg"
+                                        />
+
+                                </Route>
+                                <Route path="/about">
+                                        <MatchPairs
+                                            matchesRequired={3}
+                                            matchPhrases={["Knife", "Cut", "Jug", "Pour", "Peeler", "Peel"]}
+                                            correctPairs={[["knife","cut"], ["jug","pour"],["peeler","peel"]] }
+
+                                        />
+                                </Route>
+                                <Route path="/dashboard">
+                                        <UnscrambleWord
+                                            pageTitle="Unscramble The Words (2)"
+                                            words={["mango", "lemon", "whipped cream"]}
+                                        />
+                                </Route>
+                        </Switch>
+                </div>
+        </Router>
+    );
+*/
 
         <div>
 
 
-            <Video videoUrl ="https://k2l.bndry.co.uk/basicskills/video/intro.mp4"
-                    videoPoster="https://k2l.bndry.co.uk/basicskills/video/intro.jpg"
-             />
+
+            <Video videoUrl="https://k2l.bndry.co.uk/basicskills/video/intro.mp4"
+                   videoPoster="https://k2l.bndry.co.uk/basicskills/video/intro.jpg"
+            />
 
 
-             <MatchPairs/>
+
+            <MatchPairs
+                matchesRequired={3}
+                matchPhrases={["Knife", "Cut", "Jug", "Pour", "Peeler", "Peel"]}
+                correctPairs={[["knife","cut"], ["jug","pour"],["peeler","peel"]] }
+
+            />
+
+            <MatchPairs
+                matchesRequired={2}
+                matchPhrases={["Wooden Spoon", "Mix", "Cherries", "Decorate"]}
+                correctPairs={[["wooden spoon","mix"], ["cherries","decorate"]]}
+
+                />
+
+            <MatchPairs
+                matchesRequired={2}
+                matchPhrases={["Spoonful", "Add", "Mortar and Pestle", "Crush"]}
+                correctPairs={[["spoonful","add"], ["mortar and pestle","crush"]]}
+
+
+            />
+
+                <MatchPairs
+                    matchesRequired={2}
+                    matchPhrases={["Food Processor", "Blend", "Lemon Juicer", "Squeeze"]}
+                    correctPairs={[["food processor","blend"], ["lemon juicer","squeeze"]]}
+
+                />
+
 
 
 
 
             <ConveyorBelt
 
-                beltItems =
+                beltItems=
                     {["cookies", "sugar", "cheesecake", "cream cheese", "lemonade", "mango water", "lemon", "whipped cream", "eggs", "flour", "milk", "banana",]}
-                correctItems = {["cookies", "sugar", "cheesecake", "cream cheese", "lemonade", "mango water", "lemon", "whipped cream"]}
-                wordContainer = {["", ",", "", ",", "", ",", "", ",", "", ",", "", ",", "", ",", ""]}
+                correctItems={["cookies", "sugar", "cheesecake", "cream cheese", "lemonade", "mango water", "lemon", "whipped cream"]}
+                wordContainer={["", ",", "", ",", "", ",", "", ",", "", ",", "", ",", "", ",", ""]}
             />
 
             <ConveyorBelt
 
-                beltItems ={["lemon", "eggs", "milk", "banana","toothbrush","comb","pin","carrot","oilwell"]}
-                correctItems = {["lemon", "eggs", "milk", "banana"]}
-                wordContainer = {["", ",", "", ",", "", ",", ""]}
+                beltItems={["lemon", "eggs", "milk", "banana", "toothbrush", "comb", "pin", "carrot", "oilwell"]}
+                correctItems={["lemon", "eggs", "milk", "banana"]}
+                wordContainer={["", ",", "", ",", "", ",", ""]}
                 image="true"
             />
 
             <UnscrambleWord
-                pageTitle ="Unscramble The Words"
-
-
+                pageTitle="Unscramble The Words (1)"
+                words={["cheesecake", "cookies", "cream", "sugar"]}
             />
 
+            <UnscrambleWord
+                pageTitle="Unscramble The Words (2)"
+                words={["mango", "lemon", "whipped cream"]}
+            />
 
 
             <CompleteTheParagraph
@@ -85,8 +173,8 @@ function App() {
                 pageTitle="Mango Lemonade (3)"
                 pageImage="https://assets.myfoodandfamily.com/adaptivemedia/rendition/100652615_1500x1000.jpg?id=f7f87da633e7066c567b1e4f59c4eccc2858ebb3&ht=650&wd=1004"
                 pageSoundClip=""
-                expectedValues={[["Boil", "Melts","Pour","Shake","Enjoy"]]}
-                labelValues={["Boil", "Melts","Pour","Shake","Enjoy"]}
+                expectedValues={[["Boil", "Melts", "Pour", "Shake", "Enjoy"]]}
+                labelValues={["Boil", "Melts", "Pour", "Shake", "Enjoy"]}
                 paragraph="<<>> the water so the sugar <<>> . Now <<>> the lemon and mango juice and water into a bottle and <<>> it.
                 That's the mango lemonade ready! Now <<>> your drink."
             />
@@ -95,7 +183,8 @@ function App() {
 
         </div>
 
-    );
+    )
+        ;
 }
 
 export default App;
