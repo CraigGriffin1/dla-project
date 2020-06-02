@@ -5,7 +5,7 @@ class ConveyorBelt extends Component {
     constructor(props) {
         super(props);
         this.beltItems = this.props.beltItems;
-        this.audio = "https://k2l.bndry.co.uk/basicskills/audio/words/apple.m4a";
+        this.audio = this.props.pageSoundClip;
         this.beltItems = this.beltItems.sort(function () {
             return Math.random() - Math.random()
         });
@@ -53,7 +53,8 @@ class ConveyorBelt extends Component {
                                 "box " + (this.state.liftBox && i === 2 ? " lift " : "")
                             }
                         >
-                            {!this.props.image? this.state.beltItems[i] : <img width="55%" src={"https://k2l.bndry.co.uk/basicskills/img/words/" +this.state.beltItems[i] + ".png"}/>}
+                            {!this.props.image ? this.state.beltItems[i] : <img width="55%"
+                                                                                src={"https://k2l.bndry.co.uk/basicskills/img/words/" + this.state.beltItems[i] + ".png"}/>}
                             {/*<img width="55%" src={this.state.beltItems[i] }/>*/}
                             {/**/}
                         </p>
@@ -303,8 +304,13 @@ class ConveyorBelt extends Component {
                             <section id="activityContent">
                                 <div className="contentBox">
                                     <div className="container-fluid dd-sentence size-md">
+
+
                                         <div className="row">
                                             <div className="col-12 text-center">
+                                                <h3>Ingredient Grab</h3>
+                                                <p>Grab all of the ingredients that are required to make mango
+                                                    lemonade.</p>
                                                 <div className="conveyor-belt-container words">
                                                     <div
                                                         className="conveyor-belt-header row no-gutters align-items-center justify-content-end">
@@ -321,20 +327,6 @@ class ConveyorBelt extends Component {
                                                         )}
                                                         <div className="col-12 col-md">
                                                             <div className="word-box">
-                                                                {/* {this.wordContainer.map((word, w) => (
-
-                                        word === "" ? (
-
-                                            this.state.selectedItems[w] === "" ? (
-                                                <span key={w} className="gap"></span>
-                                            ) : (
-                                                <span key={w} className="word-highlight">{this.state.selectedItems[w] + " "}</span>
-                                            )
-
-                                        ) : (
-                                            <span key={w}>{word}&nbsp;</span>
-                                        )
-                                    ))} */}
 
                                                                 {this.renderWordBox()}
                                                             </div>
@@ -360,6 +352,19 @@ class ConveyorBelt extends Component {
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div className="row no-gutters act-end-nav justify-content-end">
+
+
+                                        <div className="col-12 col-sm-auto order-sm-3 ">
+                                            {this.props.forwardArrow}
+                                        </div>
+
+                                        <div className="col-12 col-sm-auto order-sm-1">
+                                            {this.props.backArrow}
+                                        </div>
+
+
                                     </div>
                                 </div>
                             </section>

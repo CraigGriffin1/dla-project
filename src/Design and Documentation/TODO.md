@@ -4,14 +4,18 @@
 
 
 
-## Todo Tomorrow
-- [ ] Router and link up all the pages
-- [ ] Sound clip on the complete the paragraph page
-- [ ] match the pairs with images
-- [ ] add title and description to conveyor belt game
-- [ ] bug testing
-- [ ] passing all things into components as props
+## Todo Tuesday
+- [x] Router and link up all the pages
+- [x] Sound clip on the complete the paragraph page
+- [x] add title and description to conveyor belt game
+- [x] bug testing
 
+## Todo Wednesday
+- [ ] Grey out buttons and only allow the user to move on after they have completed an activity
+- [ ] Bug Testing
+- [ ] Maybe some better photos for the complete the paragraph exercise
+- [ ] match the pairs with images
+- [ ] passing all things into components as props
 ## Intro Video
 - [ ] When the intro video has finished give a green tick or something that can be used to
       move the user on
@@ -24,7 +28,6 @@ This exercise is almost complete. It just needs to be updated with new
 images and sound clips.
 
 - [ ] Needs correct sound clips
-- [ ] 
 
 ## Screen 5 - Unscramble the Words
 This component is pretty much done 
@@ -33,7 +36,7 @@ This component is pretty much done
 
 ## Screen 6-9 - Drag and Drop The words to complete the paragraph
 This is complete. 
-- [ ] Fix sound clips so that yeah can be added at a later date
-- [ ] Sound clips should be passed through to the component as a property
+- [x] Fix sound clips so that yeah can be added at a later date
+- [x] Sound clips should be passed through to the component as a property
 
 

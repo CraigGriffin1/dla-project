@@ -30,10 +30,11 @@ class ScrambledWord extends React.Component {
         //   this.props.onClick();
 
 
-
         if (this.state.value.toLowerCase() === this.props.correct && !this.state.complete) {
-            this.setState({color: "act-box my-5 bg-success",
-                complete: true})
+            this.setState({
+                color: "act-box my-5 bg-success",
+                complete: true
+            })
             this.props.incrementCounter();
 
 
@@ -54,7 +55,7 @@ class ScrambledWord extends React.Component {
                 <input type="text" value={this.state.value} onChange={this.handleChange}/>
 
                 <button
-                    className="submit-check"  type="submit">&nbsp;</button></form></span>
+                    className="submit-check" type="submit">&nbsp;</button></form></span>
                 </div>
             </form>
         );
@@ -95,7 +96,7 @@ class unscrambleWord extends Component {
             }.bind(this),
             1500
         );
-        if ((this.state.completePuzzles === this.props.words.length-1)) {
+        if ((this.state.completePuzzles === this.props.words.length - 1)) {
             alert("All Correct!");
         }
 
@@ -163,14 +164,30 @@ class unscrambleWord extends Component {
                                         <div className="row">
                                             <div className="col-12 text-center">
                                                 <h3>{this.props.pageTitle}</h3>
-                                                <img width="50%" height="50%" class="img-fluid"
-                                                     src={this.props.pageImage}/> <hr />
+
+                                                <p>Unscramble all of the words. The first letters has been done for you!
+                                                    <hr/>
+                                                </p>
+
 
                                                 {this.generateWords()}
 
 
                                             </div>
                                         </div>
+                                    </div>
+                                    <div className="row no-gutters act-end-nav justify-content-end">
+
+
+                                        <div className="col-12 col-sm-auto order-sm-3 ">
+                                            {this.props.forwardArrow}
+                                        </div>
+
+                                        <div className="col-12 col-sm-auto order-sm-1">
+                                            {this.props.backArrow}
+                                        </div>
+
+
                                     </div>
 
                                 </div>

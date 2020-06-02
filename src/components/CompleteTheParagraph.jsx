@@ -44,6 +44,7 @@ class WordSlot extends Component {
 class CompleteTheParagraph extends Component {
     constructor(props) {
         super(props);
+        this.audio = this.props.pageSoundClip;
         this.droppablesExpected = this.props.expectedValues;
         this.labelsForDraggables = this.props.labelValues;
         this.labelsForDraggables = this.labelsForDraggables.sort(function () {
@@ -176,10 +177,21 @@ class CompleteTheParagraph extends Component {
                                     <div className="row">
                                         <div className="col-12 text-center">
                                             <h3>{this.props.pageTitle}</h3>
+                                            <p>Drag and drop the words to complete the paragraph.</p>
                                             <img width="50%" height="50%" class="img-fluid"
                                                  src={this.props.pageImage}/>
 
-                                            <button className="button-audio button-lg mb-5"></button> <hr />
+                                            {this.audio ? (
+
+                                                    <AudioButton
+                                                        label={""}
+                                                        audioSrc={this.audio}
+                                                        styling={"button-audio button-lg mb-5"}
+                                                    />
+
+                                            ) : (
+                                                <React.Fragment/>
+                                            )}<hr />
                                         </div>
                                     </div>
 
@@ -210,6 +222,21 @@ class CompleteTheParagraph extends Component {
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+
+                                <br />
+                                <div className="row no-gutters act-end-nav justify-content-end">
+
+
+                                    <div className="col-12 col-sm-auto order-sm-3 ">
+                                        {this.props.forwardArrow}
+                                    </div>
+
+                                    <div className="col-12 col-sm-auto order-sm-1">
+                                        {this.props.backArrow}
+                                    </div>
+
+
                                 </div>
 
                             </div>
