@@ -1,6 +1,6 @@
 # DLA Video A1 Picnic Snack Idea
 
-- [ ] Look into linking all the activities together maybe with react router
+- [x] Look into linking all the activities together maybe with react router
 
 
 
@@ -11,11 +11,13 @@
 - [x] bug testing
 
 ## Todo Wednesday
-- [ ] Grey out buttons and only allow the user to move on after they have completed an activity
+- [x] Grey out buttons and only allow the user to move on after they have completed an activity
 - [ ] Bug Testing
 - [ ] Maybe some better photos for the complete the paragraph exercise
 - [ ] match the pairs with images
-- [ ] passing all things into components as props
+- [x] passing all things into components as props
+- [x] Complete Screen
+- [ ] Upload to Github website
 ## Intro Video
 - [ ] When the intro video has finished give a green tick or something that can be used to
       move the user on

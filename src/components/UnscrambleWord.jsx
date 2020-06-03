@@ -73,6 +73,7 @@ class unscrambleWord extends Component {
             incorrectCaption: false,
             complete: Array(this.props.words.length).fill("act-box my-5"),
             completePuzzles: 0,
+            allComplete:false,
             test: 0,
             scrambledWords: this.scrambleLetters(this.props.words),
 
@@ -97,7 +98,7 @@ class unscrambleWord extends Component {
             1500
         );
         if ((this.state.completePuzzles === this.props.words.length - 1)) {
-            alert("All Correct!");
+            this.setState({allComplete:true});
         }
 
 
@@ -180,7 +181,10 @@ class unscrambleWord extends Component {
 
 
                                         <div className="col-12 col-sm-auto order-sm-3 ">
-                                            {this.props.forwardArrow}
+                                            {this.state.allComplete ?
+                                                this.props.forwardArrow :       <button disabled className="act-next bg-secondary " aria-pressed="true"  ><span
+                                                    className="direction-icon"/>
+                                                </button>}
                                         </div>
 
                                         <div className="col-12 col-sm-auto order-sm-1">

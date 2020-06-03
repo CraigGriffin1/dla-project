@@ -26,6 +26,8 @@ import CompleteParagraphActivity3 from "./Activities/CompleteParagraphActivity3"
 import CompleteParagraphActivity4 from "./Activities/CompleteParagraphActivity4";
 import IntroductionVideo from "./Activities/IntroductionVideo";
 
+import Complete from "./Activities/Complete";
+
 
 function App() {
     return (
@@ -70,45 +72,52 @@ function App() {
                     <Route path="/conveyor1">
                         <ConveyorBeltActivity1
                             forwardArrow={createForwardArrow("/conveyor2")}
-                            backArrow={createBackArrow("/mp4")}/>/>
+                            backArrow={createBackArrow("/mp4")}/>
                     </Route>
                     <Route path="/conveyor2">
                         <ConveyorBeltActivity2
                             forwardArrow={createForwardArrow("/unscramble1")}
-                            backArrow={createBackArrow("/conveyor1")}/>/>
+                            backArrow={createBackArrow("/conveyor1")}/>
                     </Route>
 
                     <Route path="/unscramble1">
                         < UnscrambleWordsActivity1
                             forwardArrow={createForwardArrow("/unscramble2")}
-                            backArrow={createBackArrow("/conveyor2")}/>/>/>
+                            backArrow={createBackArrow("/conveyor2")}/>
                     </Route>
                     <Route path="/unscramble2">
                         < UnscrambleWordsActivity2
                             forwardArrow={createForwardArrow("/cp1")}
-                            backArrow={createBackArrow("/unscramble1")}/>/>/>
+                            backArrow={createBackArrow("/unscramble1")}/>
                     </Route>
 
                     <Route path="/cp1">
                         <CompleteParagraphActivity1
                             forwardArrow={createForwardArrow("/cp2")}
-                            backArrow={createBackArrow("/unscramble2")}/>/>/>/>
+                            backArrow={createBackArrow("/unscramble2")}/>
                     </Route>
                     <Route path="/cp2">
                         <CompleteParagraphActivity2
                             forwardArrow={createForwardArrow("/cp3")}
-                            backArrow={createBackArrow("/cp1")}/>/>/>/>
+                            backArrow={createBackArrow("/cp1")}/>
                     </Route>
                     <Route path="/cp3">
                         <CompleteParagraphActivity3
                             forwardArrow={createForwardArrow("/cp4")}
-                            backArrow={createBackArrow("/cp2")}/>/>/>/>
+                            backArrow={createBackArrow("/cp2")}/>
                     </Route>
                     <Route path="/cp4">
                         <CompleteParagraphActivity4
-                            forwardArrow={createForwardArrow("/")}
-                            backArrow={createBackArrow("/cp3")}/>/>/>/>
+                            forwardArrow={createForwardArrow("/complete")}
+                            backArrow={createBackArrow("/cp3")}/>
                     </Route>
+
+                    <Route path="/complete">
+                        <Complete
+                            forwardArrow={createForwardArrow("/")}
+                            backArrow={createBackArrow("/cp4")}/>
+                    </Route>
+
                 </Switch>
             </div>
         </Router>
@@ -118,14 +127,25 @@ function App() {
 export default App;
 
 
+/**
+ * Creates a forward button on each page with the appropriate link from the router
+ * @param page - the page that the link should go to
+ * @returns - a html button with a react router link
+ */
 function createForwardArrow(page) {
     return (<Link to={page}>
-        <button className="act-next bg-success"><span
-    className="direction-icon"/>
+        <button className="act-next attention bg-success "><span
+            className="direction-icon"/>
         </button>
     </Link>);
 }
 
+
+/**
+ * Creates a back button on each page with the appropriate link from the router
+ * @param page - the page that the link should go to
+ * @returns - a html button with a react router link
+ */
 function createBackArrow(page) {
     return (<Link to={page}>
         <button className="act-prev bg-success">

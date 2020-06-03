@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from "react-router-dom";
 
 /* Revision Component - Shown are pairs of containers and bellow them a container with letters (lower & upper case),
  user must click on letters one after the other to make matching pairs.
@@ -37,7 +38,8 @@ class MatchPairs extends Component {
             correctCaption: false,
             matchesNeeded: this.matchesReq, //the required number of matches that is needed for completing the page
             fieldValues: fieldValues,
-            attention: true
+            attention: true,
+            complete: false
         };
 
         // this.props.hidePrev();
@@ -77,10 +79,13 @@ class MatchPairs extends Component {
                 const matchesNeeded = state.matchesNeeded;
                 const matchesCounter = state.matchesCounter + 1;
                 state.clicked[this.labels.indexOf(text)] = true; // disable the clicked pair of labels that were matched
-                if (counter <= 0 || matchesCounter == matchesNeeded) { // all required matches are found
+
+                if (counter <= 0 || matchesCounter === matchesNeeded) { // all required matches are found
                     // this.props.completeAction();
                     this.changeAttention();
                     this.disableAllButtons();
+
+                    this.setState({complete:true})
                 }
 
                 this.setState({
@@ -192,7 +197,7 @@ class MatchPairs extends Component {
                                         <div className="row">
                                             <div className="col-12 text-center">
 
-                                                <h3>Kitchen Utensils and Actions</h3>
+                                                <h3>{this.props.pageTitle}</h3>
                                                 <p>Match The Object to the verb</p>
                                                 <hr/>
 
@@ -222,7 +227,12 @@ class MatchPairs extends Component {
 
 
                                         <div className="col-12 col-sm-auto order-sm-3 ">
-                                            {this.props.forwardArrow}
+
+                                            {this.state.complete ?
+                                                this.props.forwardArrow :       <button disabled className="act-next bg-secondary " aria-pressed="true"  ><span
+                                                    className="direction-icon"/>
+                                                </button>}
+
                                         </div>
 
                                         <div className="col-12 col-sm-auto order-sm-1">

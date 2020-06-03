@@ -30,7 +30,8 @@ class ConveyorBelt extends Component {
             selectedItems: this.selectedItems,
             correctCaption: false,
             incorrectCaption: false,
-            counter: 0
+            counter: 0,
+            complete: false
         };
 
         //this.props.hidePrev();
@@ -183,7 +184,8 @@ class ConveyorBelt extends Component {
                             console.log("completed!!!")
                             this.setState({
                                 correctCaption: true,
-                                endGame: true
+                                endGame: true,
+                                complete: true
                             });
                             // this.props.completeAction();
                             setTimeout(
@@ -357,7 +359,10 @@ class ConveyorBelt extends Component {
 
 
                                         <div className="col-12 col-sm-auto order-sm-3 ">
-                                            {this.props.forwardArrow}
+                                            {this.state.complete ?
+                                                this.props.forwardArrow :       <button disabled className="act-next bg-secondary " aria-pressed="true"  ><span
+                                                    className="direction-icon"/>
+                                                </button>}
                                         </div>
 
                                         <div className="col-12 col-sm-auto order-sm-1">

@@ -54,7 +54,8 @@ class CompleteTheParagraph extends Component {
         this.state = {
             counter: 0,
             correctCaption: false,
-            incorrectCaption: false
+            incorrectCaption: false,
+            complete:false,
         };
 
         this.droppables = this.droppablesExpected.map(
@@ -87,7 +88,7 @@ class CompleteTheParagraph extends Component {
             1500
         );
         if ((this.state.counter >= this.getArrayLength()) || (this.state.counter >= this.lengthOfDroppable)) {
-            alert("All Correct!");
+            this.setState({complete:true})
         }
     };
 
@@ -229,7 +230,10 @@ class CompleteTheParagraph extends Component {
 
 
                                     <div className="col-12 col-sm-auto order-sm-3 ">
-                                        {this.props.forwardArrow}
+                                        {this.state.complete ?
+                                            this.props.forwardArrow :       <button disabled className="act-next bg-secondary " aria-pressed="true"  ><span
+                                                className="direction-icon"/>
+                                            </button>}
                                     </div>
 
                                     <div className="col-12 col-sm-auto order-sm-1">

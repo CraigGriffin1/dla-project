@@ -15,6 +15,7 @@ class MatchPairsActivity1 extends React.Component {
         return (
 
             <MatchPairs
+                pageTitle="Kitchen Utensils and Actions"
                 matchesRequired={2}
                 matchPhrases={["Food Processor", "Blend", "Lemon Juicer", "Squeeze"]}
                 correctPairs={[["food processor", "blend"], ["lemon juicer", "squeeze"]]}
