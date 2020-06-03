@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1793124ce51f445caea00cd94eaed761",
+    "revision": "74e5c359df9db30257eefcb3cbbbe6c0",
     "url": "/dla-project/index.html"
   },
   {
-    "revision": "73b78d830e922d44df6a",
+    "revision": "789b422afa7b61d34519",
     "url": "/dla-project/static/css/main.2b5d7dd9.chunk.css"
   },
   {
@@ -28,12 +28,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dla-project/static/js/14.cad7d4e3.chunk.js"
   },
   {
-    "revision": "5696ac9dd760a39b1b15",
-    "url": "/dla-project/static/js/2.b22a0ca8.chunk.js"
+    "revision": "c2381c7ffe12ab91da3a",
+    "url": "/dla-project/static/js/2.a9e0bef0.chunk.js"
   },
   {
     "revision": "4bf00ea42f5dad8ab33d5f32afec9baf",
-    "url": "/dla-project/static/js/2.b22a0ca8.chunk.js.LICENSE.txt"
+    "url": "/dla-project/static/js/2.a9e0bef0.chunk.js.LICENSE.txt"
   },
   {
     "revision": "a2b5cefd10542bb9bef8",
@@ -64,8 +64,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dla-project/static/js/9.63b2b17e.chunk.js"
   },
   {
-    "revision": "73b78d830e922d44df6a",
-    "url": "/dla-project/static/js/main.6d1ab6b6.chunk.js"
+    "revision": "789b422afa7b61d34519",
+    "url": "/dla-project/static/js/main.83a48525.chunk.js"
   },
   {
     "revision": "fd84b222e04d004f98f8",
