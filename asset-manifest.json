@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/dla-project/static/css/main.2b5d7dd9.chunk.css",
-    "main.js": "/dla-project/static/js/main.10c0d829.chunk.js",
-    "main.js.map": "/dla-project/static/js/main.10c0d829.chunk.js.map",
+    "main.js": "/dla-project/static/js/main.6fec95f6.chunk.js",
+    "main.js.map": "/dla-project/static/js/main.6fec95f6.chunk.js.map",
     "runtime-main.js": "/dla-project/static/js/runtime-main.2f49d02a.js",
     "runtime-main.js.map": "/dla-project/static/js/runtime-main.2f49d02a.js.map",
     "static/js/2.a5bbbac8.chunk.js": "/dla-project/static/js/2.a5bbbac8.chunk.js",
@@ -32,7 +32,7 @@
     "static/js/14.cad7d4e3.chunk.js": "/dla-project/static/js/14.cad7d4e3.chunk.js",
     "static/js/14.cad7d4e3.chunk.js.map": "/dla-project/static/js/14.cad7d4e3.chunk.js.map",
     "index.html": "/dla-project/index.html",
-    "precache-manifest.2a9bb399e44d8fd16d710be75778499d.js": "/dla-project/precache-manifest.2a9bb399e44d8fd16d710be75778499d.js",
+    "precache-manifest.579824e6776b76cf192ab33b936bfeac.js": "/dla-project/precache-manifest.579824e6776b76cf192ab33b936bfeac.js",
     "service-worker.js": "/dla-project/service-worker.js",
     "static/css/main.2b5d7dd9.chunk.css.map": "/dla-project/static/css/main.2b5d7dd9.chunk.css.map",
     "static/js/2.a5bbbac8.chunk.js.LICENSE.txt": "/dla-project/static/js/2.a5bbbac8.chunk.js.LICENSE.txt"
@@ -41,6 +41,6 @@
     "static/js/runtime-main.2f49d02a.js",
     "static/js/2.a5bbbac8.chunk.js",
     "static/css/main.2b5d7dd9.chunk.css",
-    "static/js/main.10c0d829.chunk.js"
+    "static/js/main.6fec95f6.chunk.js"
   ]
 }
