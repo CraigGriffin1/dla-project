@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c8f91322c25f6688be42716c93c80ef9",
+    "revision": "1014cdf3edd5c68af7150169df03d3c8",
     "url": "/dla-project/index.html"
   },
   {
-    "revision": "d2d3362f2f26b425b809",
+    "revision": "9aec4f37b304abd46b7e",
     "url": "/dla-project/static/css/main.2b5d7dd9.chunk.css"
   },
   {
@@ -64,8 +64,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dla-project/static/js/9.63b2b17e.chunk.js"
   },
   {
-    "revision": "d2d3362f2f26b425b809",
-    "url": "/dla-project/static/js/main.a52e396b.chunk.js"
+    "revision": "9aec4f37b304abd46b7e",
+    "url": "/dla-project/static/js/main.2e97bfd0.chunk.js"
   },
   {
     "revision": "fd84b222e04d004f98f8",
