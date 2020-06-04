@@ -21,12 +21,12 @@ class Complete extends React.Component {
                                             <hr/>
                                         </p>
                                             <p>
-                                                <button type="button" className="act-next attention bg-success btn-lg" onClick={() => window.location.href='/'}>Play Again
-                                                </button>
+
+                                                {this.props.playAgain}
+
                                             </p>
                                             <p>
-                                                <button type="button" className="act-next attention bg-success btn-lg" onClick={() => window.location.href='/cp4'}>Go Back
-                                                </button>
+                                                {this.props.goBack}
                                             </p>
                                             <p>
                                                 <button type="button" className="act-next attention bg-success btn-lg" onClick={() => window.location.href='https://www.klik2learn.com/'}>Return to

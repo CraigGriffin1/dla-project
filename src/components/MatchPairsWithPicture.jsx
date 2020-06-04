@@ -56,7 +56,14 @@ class MatchPairs extends Component {
 
     handleClick = (e) => {
 
-        var text = e.currentTarget.innerHTML;
+
+        var text;
+        if (e.currentTarget.innerHTML.includes("<img")) {
+            text = e.currentTarget.innerHTML.replace(/^.*[\\\/]/, '').slice(0, -6);
+        } else {
+            text = e.currentTarget.innerHTML;
+        }
+
         var textTrimmed = text.toLowerCase().trim();
         var currSelectionTrimmed = this.state.currSelection.toLowerCase().trim(); //trimming and transforming the current selection to lower case
 
@@ -85,7 +92,7 @@ class MatchPairs extends Component {
                     this.changeAttention();
                     this.disableAllButtons();
 
-                    this.setState({complete:true})
+                    this.setState({complete: true})
                 }
 
                 this.setState({
@@ -93,7 +100,7 @@ class MatchPairs extends Component {
                 })
                 setTimeout(function () {
                     this.setState({correctCaption: false})
-                }.bind(this), 750);
+                }.bind(this), 2000);
 
                 var fieldValues = this.state.fieldValues;
                 fieldValues[this.state.matchesCounter][1] = text;
@@ -143,7 +150,7 @@ class MatchPairs extends Component {
                     state.clicked[this.labels.indexOf(oldSelection)] = false; // enable the second label clicked
                     return {currSelection: "", clicked: state.clicked, disabled: false, fieldValues: fieldValues};
                 });
-            }.bind(this), 500);
+            }.bind(this), 1000);
         }
     };
 
@@ -208,9 +215,28 @@ class MatchPairs extends Component {
                                                     <div className="answer-buttons text-center">
                                                         <hr/>
                                                         {this.labels.map((item, i) => (
-                                                            <button key={i}
-                                                                    className={(this.state.clicked[this.labels.indexOf(item)]) ? (buttonStyle + " no-click") : (this.state.attention ? (buttonStyle + " attention") : (this.state.disabledClass ? (buttonStyle + " no-click") : (buttonStyle)))}
-                                                                    onClick={this.handleClick}>{item}</button>
+                                                            this.labels[i].startsWith("img") ?
+
+                                                                <button key={i}
+
+                                                                        onClick={this.handleClick}>
+
+                                                                    <img className={!(this.state.clicked[this.labels.indexOf(item)]) ? (buttonStyle + " no-click") : (this.state.attention ? (buttonStyle + " attention") : (this.state.disabledClass ? (buttonStyle + " no-click") : (buttonStyle)))}
+
+                                                                         height="40%"
+
+                                                                         alt={item}
+
+                                                                         src={"https://k2l.bndry.co.uk/basicskills/img/words/" + this.labels[i].substring(4) + ".png"}/>
+
+                                                                </button>
+
+
+                                                                :
+
+                                                                <button key={i}
+                                                                        className={(this.state.clicked[this.labels.indexOf(item)]) ? (buttonStyle + " no-click") : (this.state.attention ? (buttonStyle + " attention") : (this.state.disabledClass ? (buttonStyle + " no-click") : (buttonStyle)))}
+                                                                        onClick={this.handleClick}>{item}</button>
                                                         ))}
                                                     </div>
                                                 </div>
@@ -229,7 +255,8 @@ class MatchPairs extends Component {
                                         <div className="col-12 col-sm-auto order-sm-3 ">
 
                                             {this.state.complete ?
-                                                this.props.forwardArrow :       <button disabled className="act-next bg-secondary " aria-pressed="true"  ><span
+                                                this.props.forwardArrow :
+                                                <button disabled className="act-next bg-secondary " aria-pressed="true"><span
                                                     className="direction-icon"/>
                                                 </button>}
 
@@ -256,7 +283,7 @@ function MatchFields(props) {
     return (
         <div className="dd-word-group linked">
             <div
-                className={props.selectionOne === "" ? "dragNeighbour" : "dragNeighbour filled"}>{props.selectionOne}</div>
+                className={props.selectionOne === "" ? "dragNeighbour" : "dragNeighbour filled"}>{props.selectionOne }</div>
             <div className="link"></div>
             <div
                 className={props.selectionTwo === "" ? "dragNeighbour" : "dragNeighbour filled"}>{props.selectionTwo}</div>

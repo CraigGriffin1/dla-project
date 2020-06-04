@@ -4,6 +4,13 @@
 
 
 
+### Change this
+- [x] conveyor 1 should be ingredients in the video
+- [x] Pass links into completed page
+- [x] Match Pair exercise with images instead of words
+
+
+
 ## Todo Tuesday
 - [x] Router and link up all the pages
 - [x] Sound clip on the complete the paragraph page

@@ -311,8 +311,7 @@ class ConveyorBelt extends Component {
                                         <div className="row">
                                             <div className="col-12 text-center">
                                                 <h3>Ingredient Grab</h3>
-                                                <p>Grab all of the ingredients that are required to make mango
-                                                    lemonade.</p>
+                                                <p>Grab all of the ingredients that are mentioned in the video.</p>
                                                 <div className="conveyor-belt-container words">
                                                     <div
                                                         className="conveyor-belt-header row no-gutters align-items-center justify-content-end">

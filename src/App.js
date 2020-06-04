@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 import {
-    BrowserRouter as Router,
+    HashRouter as Router,
     Switch,
     Route,
     Link
@@ -13,6 +13,8 @@ import MatchPairsActivity1 from "./Activities/MatchPairsActivity1";
 import MatchPairsActivity2 from "./Activities/MatchPairsActivity2";
 import MatchPairsActivity3 from "./Activities/MatchPairsActivity3";
 import MatchPairsActivity4 from "./Activities/MatchPairsActivity4";
+
+import MatchPairsActivityWithPicture1 from "./Activities/MatchPairsWithPictureActivity1";
 
 import ConveyorBeltActivity1 from "./Activities/ConveyorBeltActivity1"
 import ConveyorBeltActivity2 from "./Activities/ConveyorBeltActivity2"
@@ -43,6 +45,7 @@ function App() {
                         <IntroductionVideo
                             forwardArrow={createForwardArrow("/mp1")}
                         />
+
                     </Route>
 
                     <Route path="/mp1">
@@ -108,14 +111,30 @@ function App() {
                     </Route>
                     <Route path="/cp4">
                         <CompleteParagraphActivity4
-                            forwardArrow={createForwardArrow("/complete")}
+                            forwardArrow={createForwardArrow("/mp5")}
                             backArrow={createBackArrow("/cp3")}/>
+                    </Route>
+
+                    <Route path="/mp5">
+                        <MatchPairsActivityWithPicture1
+                            forwardArrow={createForwardArrow("/complete")}
+                            backArrow={createBackArrow("/cp4")}/>
                     </Route>
 
                     <Route path="/complete">
                         <Complete
-                            forwardArrow={createForwardArrow("/")}
-                            backArrow={createBackArrow("/cp4")}/>
+
+                            playAgain={<Link to={"/"}>
+                                <button type="button" className="act-next attention bg-success btn-lg">Play Again
+                                </button>
+                            </Link>}
+
+
+                            goBack={<Link to={"/mp5"}>
+                                <button type="button" className="act-next attention bg-success btn-lg">Go Back
+                                </button>
+                            </Link>} />
+
                     </Route>
 
                 </Switch>
