@@ -39,7 +39,8 @@ class MatchPairs extends Component {
             matchesNeeded: this.matchesReq, //the required number of matches that is needed for completing the page
             fieldValues: fieldValues,
             attention: true,
-            complete: false
+            complete: false,
+            vim:[],
         };
 
         // this.props.hidePrev();
@@ -56,6 +57,8 @@ class MatchPairs extends Component {
 
     handleClick = (e) => {
 
+
+        console.log(this.state.vim)
         var text = e.currentTarget.innerHTML;
         var textTrimmed = text.toLowerCase().trim();
         var currSelectionTrimmed = this.state.currSelection.toLowerCase().trim(); //trimming and transforming the current selection to lower case
@@ -64,7 +67,7 @@ class MatchPairs extends Component {
         console.log(this.props.correctPairs);
 
         // disable the clicked for already clicked label
-        if (this.state.matches.includes(textTrimmed) || this.state.matches.includes(currSelectionTrimmed)
+        if (this.state.vim.includes(textTrimmed) || this.state.vim.includes(currSelectionTrimmed)
             || this.state.currSelection === text || this.state.disabled) {
             console.log("clicks disabled");
             return;
@@ -72,13 +75,17 @@ class MatchPairs extends Component {
 
 
         if (arrayAlreadyHasArray(this.props.correctPairs, [textTrimmed, currSelectionTrimmed]) ||
-            arrayAlreadyHasArray(this.props.correctPairs, [currSelectionTrimmed, textTrimmed])) { //a correct match was found
+            arrayAlreadyHasArray(this.props.correctPairs, [currSelectionTrimmed, textTrimmed])) {//a correct match was found
+
+
             this.setState(state => {
                 const matches = state.matches.concat([text.toLowerCase().trim()]);
                 const counter = state.counter - 1;
                 const matchesNeeded = state.matchesNeeded;
                 const matchesCounter = state.matchesCounter + 1;
                 state.clicked[this.labels.indexOf(text)] = true; // disable the clicked pair of labels that were matched
+                this.state.vim.push(textTrimmed);
+                this.state.vim.push(currSelectionTrimmed);
 
                 if (counter <= 0 || matchesCounter === matchesNeeded) { // all required matches are found
                     // this.props.completeAction();
@@ -88,8 +95,10 @@ class MatchPairs extends Component {
                     this.setState({complete:true})
                 }
 
+
                 this.setState({
-                    correctCaption: true
+                    correctCaption: true,
+
                 })
                 setTimeout(function () {
                     this.setState({correctCaption: false})
@@ -104,7 +113,8 @@ class MatchPairs extends Component {
                     counter,
                     clicked: state.clicked,
                     matchesCounter,
-                    fieldValues: fieldValues
+                    fieldValues: fieldValues,
+
                 };
             });
 
