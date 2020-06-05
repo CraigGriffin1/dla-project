@@ -9,6 +9,7 @@ class ScrambledWord extends React.Component {
             scrambledWord: "",
             complete: false,
             color: "act-box my-5",
+            attempts: 0,
 
 
         };
@@ -16,6 +17,7 @@ class ScrambledWord extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleHint = this.handleHint.bind(this);
     }
 
 
@@ -23,11 +25,36 @@ class ScrambledWord extends React.Component {
         this.setState({value: event.target.value});
     }
 
+
+    handleHint() {
+
+
+        let stillCorrect = true;
+        let counter = 0;
+        let hint = "";
+
+        if (!(this.state.value.toLowerCase() === this.props.correct)) {
+            while (stillCorrect) {
+                if (this.state.value[counter] === this.props.correct[counter]) {
+                    if (counter < this.props.correct.length - 1) {
+                        hint = hint.concat(this.props.correct[counter])
+                    }
+                    counter += 1;
+                } else {
+                    stillCorrect = false;
+                }
+            }
+
+            hint = hint.concat(this.props.correct[counter])
+
+
+            this.setState({value: hint});
+        }
+    }
+
     handleSubmit(event) {
 
-        //this.props.trigger();
-
-        //   this.props.onClick();
+        this.setState({attempts: this.state.attempts + 1})
 
 
         if (this.state.value.toLowerCase() === this.props.correct && !this.state.complete) {
@@ -55,8 +82,13 @@ class ScrambledWord extends React.Component {
                 <input type="text" value={this.state.value} onChange={this.handleChange}/>
 
                 <button
-                    className="submit-check" type="submit">&nbsp;</button></form></span>
-                </div>
+                    className="submit-check" type="submit">&nbsp;</button>
+
+                    {this.state.attempts >= 3 ? <button
+                        className="bg-warning" onClick={this.handleHint} type="submit">?</button> : ""}
+
+                </form></span></div>
+
             </form>
         );
     }
@@ -73,7 +105,7 @@ class unscrambleWord extends Component {
             incorrectCaption: false,
             complete: Array(this.props.words.length).fill("act-box my-5"),
             completePuzzles: 0,
-            allComplete:false,
+            allComplete: false,
             test: 0,
             scrambledWords: this.scrambleLetters(this.props.words),
 
@@ -98,7 +130,7 @@ class unscrambleWord extends Component {
             1500
         );
         if ((this.state.completePuzzles === this.props.words.length - 1)) {
-            this.setState({allComplete:true});
+            this.setState({allComplete: true});
         }
 
 
@@ -182,7 +214,8 @@ class unscrambleWord extends Component {
 
                                         <div className="col-12 col-sm-auto order-sm-3 ">
                                             {this.state.allComplete ?
-                                                this.props.forwardArrow :       <button disabled className="act-next bg-secondary " aria-pressed="true"  ><span
+                                                this.props.forwardArrow :
+                                                <button disabled className="act-next bg-secondary " aria-pressed="true"><span
                                                     className="direction-icon"/>
                                                 </button>}
                                         </div>

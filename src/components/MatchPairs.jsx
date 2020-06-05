@@ -108,7 +108,7 @@ class MatchPairs extends Component {
                 };
             });
 
-        } else if (this.state.currSelection == "") { // the first label from a pair was selected
+        } else if (this.state.currSelection === "") { // the first label from a pair was selected
             var fieldValues = this.state.fieldValues;
 
             if (this.state.matchesCounter >= fieldValues.length) {
