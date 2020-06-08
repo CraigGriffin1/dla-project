@@ -82,10 +82,10 @@ class ScrambledWord extends React.Component {
                 <input type="text" value={this.state.value} onChange={this.handleChange}/>
 
                 <button
-                    className="submit-check" type="submit">&nbsp;</button>
+                     type="submit">Ok</button>
 
-                    {this.state.attempts >= 3 ? <button
-                        className="bg-warning" onClick={this.handleHint} type="submit">?</button> : ""}
+                    {/*this.state.attempts >= 3 ? */}
+                    <button className="bg-warning" onClick={this.handleHint} type="submit">?</button>
 
                 </form></span></div>
 
@@ -198,9 +198,11 @@ class unscrambleWord extends Component {
                                             <div className="col-12 text-center">
                                                 <h3>{this.props.pageTitle}</h3>
 
-                                                <p>Unscramble all of the words. The first letters has been done for you!
-                                                    <hr/>
-                                                </p>
+                                             {/*   <p>Unscramble all of the words. The first letters has been done for you!
+
+                                                </p>*/}
+
+                                                <hr/>
 
 
                                                 {this.generateWords()}

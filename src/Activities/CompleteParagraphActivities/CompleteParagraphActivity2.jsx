@@ -1,10 +1,10 @@
 import React from 'react';
-import '../App.css';
+import '../../App.css';
 
 
 
-import CompleteTheParagraph from "../components/CompleteTheParagraph";
-import ConveyorBelt from "../components/ConveyorBelt";
+import CompleteTheParagraph from "../../components/CompleteTheParagraph";
+
 
 
 

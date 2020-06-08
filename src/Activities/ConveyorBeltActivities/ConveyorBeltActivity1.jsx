@@ -1,9 +1,9 @@
 import React from 'react';
-import '../App.css';
+import '../../App.css';
 
 
 
-import ConveyorBelt from "../components/ConveyorBelt";
+import ConveyorBelt from "../../components/ConveyorBelt";
 
 
 

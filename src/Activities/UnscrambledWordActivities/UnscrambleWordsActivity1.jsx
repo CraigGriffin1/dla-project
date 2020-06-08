@@ -1,9 +1,9 @@
 import React from 'react';
-import '../App.css';
+import '../../App.css';
 
 
 
-import UnscrambleWord from "../components/UnscrambleWord";
+import UnscrambleWord from "../../components/UnscrambleWord";
 
 
 

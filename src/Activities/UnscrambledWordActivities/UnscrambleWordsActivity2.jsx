@@ -1,10 +1,9 @@
 import React from 'react';
-import '../App.css';
+import '../../App.css';
 
 
-import UnscrambleWord from "../components/UnscrambleWord";
-import UnscrambleWordsActivity1 from "./UnscrambleWordsActivity1";
-import MatchPairs from "../components/MatchPairs";
+import UnscrambleWord from "../../components/UnscrambleWord";
+
 
 
 class UnscrambleWordsActivity2 extends React.Component {

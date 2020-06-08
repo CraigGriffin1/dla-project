@@ -1,9 +1,9 @@
 import React from 'react';
-import '../App.css';
+import '../../App.css';
 
 
 
-import MatchPairs from "../components/MatchPairs";
+import MatchPairs from "../../components/MatchPairs";
 
 
 

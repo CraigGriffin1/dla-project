@@ -1,13 +1,14 @@
 import React from 'react';
-import '../App.css';
+import '../../App.css';
 
 
 
-import MatchPairs from "../components/MatchPairs";
+import MatchCards from "../../components/MatchCards";
+import MatchPairs from "../../components/MatchPairs";
 
 
 
-class MatchPairsActivity1 extends React.Component{
+class MatchCardsActivity5 extends React.Component{
 
     constructor(props) {
         super(props);
@@ -16,7 +17,7 @@ class MatchPairsActivity1 extends React.Component{
     render(){
         return(
 
-            <MatchPairs
+            <MatchCards
                 pageTitle="Kitchen Utensils and Actions"
                 matchesRequired={3}
                 matchPhrases={["Knife", "Cut", "Jug", "Pour", "Peeler", "Peel"]}
@@ -30,4 +31,4 @@ class MatchPairsActivity1 extends React.Component{
 
 }
 
-export default MatchPairsActivity1;
+export default MatchCardsActivity5;
