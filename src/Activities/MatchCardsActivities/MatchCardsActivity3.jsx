@@ -4,15 +4,13 @@ import '../../App.css';
 
 
 import MatchCards from "../../components/MatchCards";
-import MatchPairs from "../../components/MatchPairs";
+
+import pestle from "../../img/pestleandmotar.png"
+
 
 
 
 class MatchCardsActivity1 extends React.Component{
-
-    constructor(props) {
-        super(props);
-    }
 
     render(){
         return(
@@ -20,8 +18,8 @@ class MatchCardsActivity1 extends React.Component{
             <MatchCards
                 pageTitle="Kitchen Utensils and Actions"
                 matchesRequired={3}
-                matchPhrases={["https://k2l.bndry.co.uk/basicskills/img/words/spoon.png", "Add", "https://www.iconspng.com/uploads/marlbe-pestle-and-mortar.png", "Crush"]}
-                correctPairs={[["https://k2l.bndry.co.uk/basicskills/img/words/spoon.png", "add"], ["https://www.iconspng.com/uploads/marlbe-pestle-and-mortar.png", "crush"]]}
+                matchPhrases={["https://k2l.bndry.co.uk/basicskills/img/words/spoon.png", "Add", "https://github.com/CraigGriffin1/dla-project/blob/master/src/img/mango_lemonade.jpg", "Crush"]}
+                correctPairs={[["https://k2l.bndry.co.uk/basicskills/img/words/spoon.png", "add"], ["https://github.com/CraigGriffin1/dla-project/blob/master/src/img/mango_lemonade.jpg", "crush"]]}
                 forwardArrow = {this.props.forwardArrow}
                 backArrow = {this.props.backArrow}
             />

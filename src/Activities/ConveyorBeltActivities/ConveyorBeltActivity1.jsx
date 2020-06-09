@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../App.css';
+import cookies from '../../soundclips/cookies.m4a'
 
 
 
@@ -20,7 +21,7 @@ class ConveyorBeltActivity1 extends React.Component{
                     {["cookies", "sugar", "cheesecake", "cream cheese", "lemonade", "mango water", "lemon", "whipped cream", "eggs", "flour", "milk", "banana",]}
                 correctItems={["cookies", "sugar", "cheesecake", "cream cheese", "lemonade", "mango water", "lemon", "whipped cream"]}
                 wordContainer={["", ",", "", ",", "", ",", "", ",", "", ",", "", ",", "", ",", ""]}
-                pageSoundClip="https://k2l.bndry.co.uk/basicskills/audio/words/apple.m4a"
+                pageSoundClip={cookies}
                 forwardArrow={this.props.forwardArrow}
                 backArrow={this.props.backArrow}
             />

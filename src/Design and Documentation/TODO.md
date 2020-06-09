@@ -3,6 +3,11 @@
 - [x] Look into linking all the activities together maybe with react router
 
 
+- [ ] Size bug with the pestle and mortar
+- [ ] Pass in image as a prop
+- [ ] Continue with conveyor belt
+
+
 
 ### Change this
 - [x] conveyor 1 should be ingredients in the video

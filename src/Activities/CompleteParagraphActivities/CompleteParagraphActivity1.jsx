@@ -4,6 +4,7 @@ import '../../App.css';
 
 
 import CompleteTheParagraph from "../../components/CompleteTheParagraph";
+import oreoCheesecake from '../../soundclips/oreocheesecake.m4a'
 
 
 
@@ -19,7 +20,7 @@ class CompleteParagraphActivity1 extends React.Component{
             <CompleteTheParagraph
                 pageTitle="Oreo Cheesecake"
                 pageImage="https://live.staticflickr.com/5563/14835710576_a5f0a50354_b.jpg"
-                pageSoundClip="https://k2l.bndry.co.uk/basicskills/audio/words/apple.m4a"
+                pageSoundClip={oreoCheesecake}
                 expectedValues={[["Build", "Start", "Add", "Decorate", "Is"]]}
                 labelValues={["Build", "Start", "Add", "Decorate", "Is"]}
                 paragraph="Now to <<>> the cake. <<>> with big Oreo pieces at the bottom. <<>> the cream mix on top.

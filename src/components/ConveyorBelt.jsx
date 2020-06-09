@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import AudioButton from "./AudioButton";
 
+import MyComponentWithSound from "./Sound";
+
 class ConveyorBelt extends Component {
     constructor(props) {
         super(props);
@@ -31,11 +33,14 @@ class ConveyorBelt extends Component {
             correctCaption: false,
             incorrectCaption: false,
             counter: 0,
-            complete: false
+            complete: false,
+            playStatus: true
         };
 
         //this.props.hidePrev();
     }
+
+
 
     renderItems = () => {
         let arr = [];
@@ -278,16 +283,33 @@ class ConveyorBelt extends Component {
         return arr;
     }
 
-    playAudio = () => {
-        var audio = new Audio(this.audio);
-        audio.load();
-        //audio.play();
-    }
+    playAudio = url => {
+        if (url) {
+            var soundfile = url;
+            this.audioPlay = new Audio(soundfile);
+            this.audioPlay.volume = 0.3;
+            this.audioPlay.play();
+
+        } else {
+            //this.audioPlay.stop();
+            setTimeout(function () {
+                this.audioPlay = {};
+                this.audioPlay = new Audio(soundfile);
+                this.audioPlay.play();
+                this.setState({playStatus : true});
+            }.bind(this), 500);
+        }
+    };
+
+
 
     render() {
 
 
+
         return (
+
+
             <React.Fragment>
                 {this.state.correctCaption ? (
                     <div className="feedbackCaption correct animated bounceIn"/>
@@ -300,6 +322,9 @@ class ConveyorBelt extends Component {
                     <React.Fragment/>
                 )}
 
+
+                { this.playAudio(this.audio)}
+
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-12">
@@ -308,10 +333,11 @@ class ConveyorBelt extends Component {
                                     <div className="container-fluid dd-sentence size-md">
 
 
+
                                         <div className="row">
                                             <div className="col-12 text-center">
-                                                <h3>Ingredient Grab</h3>
-                                                <p>Grab all of the ingredients that are mentioned in the video.</p>
+                                            {/*    <h3>Ingredient Grab</h3>
+                                                <p>Grab all of the ingredients that are mentioned in the video.</p>*/}
                                                 <div className="conveyor-belt-container words">
                                                     <div
                                                         className="conveyor-belt-header row no-gutters align-items-center justify-content-end">
@@ -320,7 +346,7 @@ class ConveyorBelt extends Component {
                                                                 <AudioButton
                                                                     label={""}
                                                                     audioSrc={this.audio}
-                                                                    styling={"button-audio"}
+                                                                    styling={"button-audio button-lg attention"}
                                                                 />
                                                             </div>
                                                         ) : (

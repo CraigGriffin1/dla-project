@@ -3,7 +3,7 @@ import '../../App.css';
 
 
 import CompleteTheParagraph from "../../components/CompleteTheParagraph";
-
+import Mango2 from '../../soundclips/mango2.m4a'
 
 
 class CompleteParagraphActivity3 extends React.Component{
@@ -18,7 +18,7 @@ class CompleteParagraphActivity3 extends React.Component{
             <CompleteTheParagraph
                 pageTitle="Mango Lemonade (2)"
                 pageImage="https://createmindfully.com/wp-content/uploads/2019/01/mango-lemonade-close-up-500x500.jpg"
-                pageSoundClip="https://k2l.bndry.co.uk/basicskills/audio/words/apple.m4a"
+                pageSoundClip={Mango2}
                 expectedValues={[["Peel", "Cut", "Blend", "Add", "Blend"]]}
                 labelValues={["Peel", "Cut", "Blend", "Add", "Blend"]}
                 paragraph="<<>> it, <<>> it into small pieces and <<>> it. <<>> the lemon juice and <<>> again."
