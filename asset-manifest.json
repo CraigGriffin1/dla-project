@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/dla-project/static/css/main.ba3748a6.chunk.css",
-    "main.js": "/dla-project/static/js/main.12639e21.chunk.js",
-    "main.js.map": "/dla-project/static/js/main.12639e21.chunk.js.map",
+    "main.css": "/dla-project/static/css/main.499cef1a.chunk.css",
+    "main.js": "/dla-project/static/js/main.67f8d4d6.chunk.js",
+    "main.js.map": "/dla-project/static/js/main.67f8d4d6.chunk.js.map",
     "runtime-main.js": "/dla-project/static/js/runtime-main.3514a500.js",
     "runtime-main.js.map": "/dla-project/static/js/runtime-main.3514a500.js.map",
     "static/js/2.11729ae1.chunk.js": "/dla-project/static/js/2.11729ae1.chunk.js",
@@ -32,9 +32,9 @@
     "static/js/14.a8df1452.chunk.js": "/dla-project/static/js/14.a8df1452.chunk.js",
     "static/js/14.a8df1452.chunk.js.map": "/dla-project/static/js/14.a8df1452.chunk.js.map",
     "index.html": "/dla-project/index.html",
-    "precache-manifest.156a440ca407a5318344380cb37d5bbf.js": "/dla-project/precache-manifest.156a440ca407a5318344380cb37d5bbf.js",
+    "precache-manifest.558df013168fd2a9b5178d772f140336.js": "/dla-project/precache-manifest.558df013168fd2a9b5178d772f140336.js",
     "service-worker.js": "/dla-project/service-worker.js",
-    "static/css/main.ba3748a6.chunk.css.map": "/dla-project/static/css/main.ba3748a6.chunk.css.map",
+    "static/css/main.499cef1a.chunk.css.map": "/dla-project/static/css/main.499cef1a.chunk.css.map",
     "static/js/2.11729ae1.chunk.js.LICENSE.txt": "/dla-project/static/js/2.11729ae1.chunk.js.LICENSE.txt",
     "static/media/banana.png": "/dla-project/static/media/banana.ca575bc5.png",
     "static/media/cheesecake.png": "/dla-project/static/media/cheesecake.48c662a4.png",
@@ -42,7 +42,7 @@
     "static/media/cookies.m4a": "/dla-project/static/media/cookies.b2151474.m4a",
     "static/media/cookies.png": "/dla-project/static/media/cookies.ca298ed1.png",
     "static/media/creamcheese.m4a": "/dla-project/static/media/creamcheese.4ec7e095.m4a",
-    "static/media/creamcheese.png": "/dla-project/static/media/creamcheese.d7f4a3c6.png",
+    "static/media/creamcheese.png": "/dla-project/static/media/creamcheese.c0c866ec.png",
     "static/media/eggs.png": "/dla-project/static/media/eggs.97658974.png",
     "static/media/flour.png": "/dla-project/static/media/flour.3dfbaeff.png",
     "static/media/lemon.m4a": "/dla-project/static/media/lemon.0dcf6eb2.m4a",
@@ -52,8 +52,8 @@
     "static/media/mango1.m4a": "/dla-project/static/media/mango1.a2c28a28.m4a",
     "static/media/mango2.m4a": "/dla-project/static/media/mango2.047c0358.m4a",
     "static/media/mango3.m4a": "/dla-project/static/media/mango3.584401db.m4a",
-    "static/media/mangowater.png": "/dla-project/static/media/mangowater.5041fd38.png",
-    "static/media/mangowater.m4a": "/dla-project/static/media/mangowater.9c64bb04.m4a",
+    "static/media/mangowater.png": "/dla-project/static/media/mangowater.df0dae02.png",
+    "static/media/mangowater.m4a": "/dla-project/static/media/mangowater.f74d9903.m4a",
     "static/media/milk.png": "/dla-project/static/media/milk.233261b1.png",
     "static/media/oreocheesecake.m4a": "/dla-project/static/media/oreocheesecake.5b3231ea.m4a",
     "static/media/pestleandmotar.png": "/dla-project/static/media/pestleandmotar.783ed505.png",
@@ -65,7 +65,7 @@
   "entrypoints": [
     "static/js/runtime-main.3514a500.js",
     "static/js/2.11729ae1.chunk.js",
-    "static/css/main.ba3748a6.chunk.css",
-    "static/js/main.12639e21.chunk.js"
+    "static/css/main.499cef1a.chunk.css",
+    "static/js/main.67f8d4d6.chunk.js"
   ]
 }
