@@ -63,9 +63,11 @@ class ScrambledWord extends React.Component {
                 complete: true
             })
             this.props.incrementCounter();
-
+        }else{
+            this.props.showWrong();
 
         }
+
 
         event.preventDefault();
     }
@@ -73,7 +75,7 @@ class ScrambledWord extends React.Component {
     render() {
         return (
 
-            <form onSubmit={this.handleSubmit}>
+            <form >
 
                 <div className={this.state.color}><span
                     className="text bold">{this.props.scrambledword} :</span><span
@@ -82,7 +84,7 @@ class ScrambledWord extends React.Component {
                 <input type="text" value={this.state.value} onChange={this.handleChange}/>
 
                 <button
-                     type="submit">Ok</button>
+                     type="submit" onClick={this.handleSubmit}>Ok</button>
 
                     {/*this.state.attempts >= 3 ? */}
                     <button className="bg-warning" onClick={this.handleHint} type="submit">?</button>
@@ -136,6 +138,20 @@ class unscrambleWord extends Component {
 
     }
 
+    showWrong(){
+
+        this.setState(prevState => ({
+            incorrectCaption: true
+        }));
+        setTimeout(
+            function () {
+                this.setState({incorrectCaption: false});
+            }.bind(this),
+            1500
+        );
+
+    }
+
     scrambleLetters(words) {
 
         let scrambledWords = [];
@@ -164,6 +180,7 @@ class unscrambleWord extends Component {
                     correct={this.props.words[i]}
                     scrambledword={this.state.scrambledWords[i]}
                     incrementCounter={() => this.trigger()}
+                    showWrong={() => this.showWrong()}
                     color={this.state.complete[i]}
                 />);
         }

@@ -50,10 +50,10 @@ function App() {
                 <Switch>
                     <Route exact path="/">
 
-                        <MatchCardsActivity1
-                            forwardArrow={createForwardArrow("/mp1")}
-                        />
 
+                        <MatchCardsActivity1
+                            forwardArrow={createForwardArrow("/mp2")}
+                        />
 
                     </Route>
 
@@ -100,12 +100,12 @@ function App() {
 
 
                     <Route path="/conveyor1">
-                        <ConveyorBeltActivity1
+                        <ConveyorBeltActivity2
                             forwardArrow={createForwardArrow("/conveyor2")}
                             backArrow={createBackArrow("/mp4")}/>
                     </Route>
                     <Route path="/conveyor2">
-                        <ConveyorBeltActivity2
+                        <ConveyorBeltActivity1
                             forwardArrow={createForwardArrow("/unscramble1")}
                             backArrow={createBackArrow("/conveyor1")}/>
                     </Route>
@@ -152,7 +152,7 @@ function App() {
                             </Link>}
 
 
-                            goBack={<Link to={"/mp5"}>
+                            goBack={<Link to={"/cp4"}>
                                 <button type="button" className="act-next attention bg-success btn-lg">Go Back
                                 </button>
                             </Link>}/>

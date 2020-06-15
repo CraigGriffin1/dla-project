@@ -2,17 +2,48 @@ import React, {Component} from "react";
 import AudioButton from "./AudioButton";
 
 import MyComponentWithSound from "./Sound";
+import cookies from '../img/cookies.png'
 
 class ConveyorBelt extends Component {
     constructor(props) {
         super(props);
         this.beltItems = this.props.beltItems;
-        this.audio = this.props.pageSoundClip;
-        this.beltItems = this.beltItems.sort(function () {
-            return Math.random() - Math.random()
-        });
+        this.beltItemsTemp = this.props.beltItems;
+        this.beltImages = this.props.beltImages;
+        this.dict = {};
+
+
+        if (this.beltImages) {
+            shuffle(this.beltItems, this.beltImages)
+            for (let i = 0; i < this.beltItems.length; i++) {
+                this.dict[this.beltItemsTemp[i]] = this.beltImages[i].name
+            }
+
+        } else {
+            this.beltItems = this.beltItems.sort(function () {
+                return Math.random() - Math.random()
+            });
+        }
+
+
+        this.audioClips = [];
+        this.audio = "";
+
+        this.cookies = this.props.cookies;
+        this.sugar = this.props.sugar;
+        this.cheesecake = this.props.cheesecake;
+        this.creamCheese = this.props.creamCheese;
+        this.lemonade = this.props.lemonade;
+        this.mangoWater = this.props.mangoWater;
+        this.lemon = this.props.lemon;
+        this.whippedCream = this.props.whippedCream;
+        this.audioClips.push(this.cookies, this.sugar, this.cheesecake, this.creamCheese, this.lemonade, this.mangoWater, this.lemon, this.whippedCream);
+
+
         this.correctItems = this.props.correctItems;
         this.wordContainer = this.props.wordContainer;
+
+
         this.itemsStatus = [];
         for (let i = 0; i < this.beltItems.length; i++) {
             this.itemsStatus.push("");
@@ -34,15 +65,38 @@ class ConveyorBelt extends Component {
             incorrectCaption: false,
             counter: 0,
             complete: false,
-            playStatus: true
+            playStatus: false,
+            currentItem: "",
+            completeWords: 0,
+            soundurl: this.audioClips[0],
+            incorrectValue: ""
         };
+        this.chooseItem(0);
+
 
         //this.props.hidePrev();
     }
 
 
+    chooseItem = (i) => {
+        this.currentItem = this.correctItems[i];
+        let item = this.correctItems[i];
+        console.log(item)
+        this.setState(
+            {
+                currentItem: item,
+                soundurl: this.audioClips[i]
+            });
+        let test = this.currentItem;
+
+        this.audio = this.audioClips[i];
+
+
+    }
+
 
     renderItems = () => {
+        console.log(this.dict)
         let arr = [];
         for (let i = 0; i < this.state.beltItems.length; i++) {
             arr.push(
@@ -59,8 +113,8 @@ class ConveyorBelt extends Component {
                                 "box " + (this.state.liftBox && i === 2 ? " lift " : "")
                             }
                         >
-                            {!this.props.image ? this.state.beltItems[i] : <img width="55%"
-                                                                                src={"https://k2l.bndry.co.uk/basicskills/img/words/" + this.state.beltItems[i] + ".png"}/>}
+                            {!this.props.image ? this.state.beltItems[i] : <img width="50%"
+                                                                                src={this.dict[this.state.beltItems[i]]}/>}
                             {/*<img width="55%" src={this.state.beltItems[i] }/>*/}
                             {/**/}
                         </p>
@@ -77,19 +131,20 @@ class ConveyorBelt extends Component {
             this.moveBelt()
         }, 1000);
         if (this.audio) {
-            this.playAudio();
+            ;
         }
     }
 
     moveBelt = () => {
+        //console.log(this.state.beltItems, this.state.incorrectValue)
         this.setState(state => {
             let beltItems = [...state.beltItems]; //create a copy of the state array - e.g. [1,2,3,4]
             let firstItem = beltItems[0]; //get the first item on the array - firstItem == 1
             beltItems = beltItems.slice(1); //update the array without the first item - [2,3,4]
             beltItems = beltItems.concat(firstItem); //add the first item at the end of the array - [2,3,4,1]
-            if (this.incorrectValue !== "") {
-                beltItems = beltItems.concat(this.incorrectValue); //add the incorrect word to the end of the array, if word is in the sentence
-                this.incorrectValue = "";
+            if (this.state.incorrectValue !== "") {
+                beltItems = beltItems.concat(this.state.incorrectValue); //add the incorrect word to the end of the array, if word is in the sentence
+                this.setState({incorrectValue: ""})
             }
 
 
@@ -149,8 +204,22 @@ class ConveyorBelt extends Component {
 
             clearInterval(this.beltInterval); //stop the belt during a grab
 
-            if (this.correctItems.includes(this.state.beltItems[2])) {
+
+            if (this.currentItem === (this.state.beltItems[2])) {
                 console.log("CORRECT");
+
+                this.setState({
+                    correctCaption: true,
+                });
+                // this.props.completeAction();
+                setTimeout(
+                    function () {
+                        this.setState({correctCaption: false});
+                    }.bind(this),
+                    2000
+                );
+
+
                 //making the necessary updates after a box has been picked up
                 setTimeout(() => {
                     this.setState(state => ({ //the grab animation has completed - remove the "grab" class from the claw and the "lift" class from the box
@@ -202,6 +271,15 @@ class ConveyorBelt extends Component {
                         }
                     })
 
+                    this.setState({completeWords: this.state.completeWords += 1});
+                    this.setState({
+                        soundurl: this.audioClips[this.state.completeWords],
+                        playStatus: false
+                    });
+                    console.log(this.state.completeWords);
+                    this.chooseItem(this.state.completeWords)
+
+
                     if (!this.state.endGame) {
                         this.beltInterval = setInterval(() => { //start the belt again
                             this.moveBelt()
@@ -215,9 +293,8 @@ class ConveyorBelt extends Component {
                 console.log("INCORRECT");
                 //making the necessary updates after a box has been picked up
 
-                if (this.correctItems.includes(this.state.beltItems[2])) {
-                    this.incorrectValue = this.state.beltItems[2];
-                }
+                this.state.incorrectValue = this.state.beltItems[2];
+
 
                 setTimeout(() => {
                     this.setState(state => ({ //the grab animation has completed - remove the "grab" class from the claw and the "lift" class from the box
@@ -240,20 +317,26 @@ class ConveyorBelt extends Component {
                     }));
 
                     this.setState({
-                        incorrectCaption: true
+                        incorrectCaption: true,
                     });
                     setTimeout(
                         function () {
                             this.setState({incorrectCaption: false});
                         }.bind(this),
-                        1000
+                        2000
                     );
 
                     this.beltInterval = setInterval(() => { //start the belt again
                         this.moveBelt()
                     }, 1000);
 
-                }, 2000)
+
+                    this.setState({
+                        playStatus: false
+                    });
+
+                }, 2000);
+
 
             }
 
@@ -283,28 +366,43 @@ class ConveyorBelt extends Component {
         return arr;
     }
 
+    renderCountdown() {
+        console.log(this.state.completeWords,this.correctItems.length-1)
+        if ((this.state.completeWords - 1) === this.correctItems.length-1) {
+            return (<h3>Well Done!</h3>);
+        } else {
+            return (<h3>{this.state.completeWords} out of {this.correctItems.length}</h3>);
+        }
+
+    }
+
     playAudio = url => {
         if (url) {
             var soundfile = url;
             this.audioPlay = new Audio(soundfile);
-            this.audioPlay.volume = 0.3;
+            this.audioPlay.volume = 0.5;
             this.audioPlay.play();
-
-        } else {
-            //this.audioPlay.stop();
-            setTimeout(function () {
-                this.audioPlay = {};
-                this.audioPlay = new Audio(soundfile);
-                this.audioPlay.play();
-                this.setState({playStatus : true});
-            }.bind(this), 500);
         }
     };
 
 
+    playAudioOnce() {
+        if (!this.state.playStatus) {
+            this.playAudio(this.state.soundurl);
+            this.setState({playStatus: true});
+        }
+
+    }
+
+    renderAudioButton() {
+
+        return (<button className="button-audio button-lg responsive"
+                        onClick={() => this.playAudio(this.state.soundurl)}></button>)
+
+    }
+
 
     render() {
-
 
 
         return (
@@ -323,7 +421,8 @@ class ConveyorBelt extends Component {
                 )}
 
 
-                { this.playAudio(this.audio)}
+                {this.playAudioOnce()}
+
 
                 <div className="container-fluid">
                     <div className="row">
@@ -333,29 +432,24 @@ class ConveyorBelt extends Component {
                                     <div className="container-fluid dd-sentence size-md">
 
 
-
                                         <div className="row">
                                             <div className="col-12 text-center">
-                                            {/*    <h3>Ingredient Grab</h3>
+                                                {/*    <h3>Ingredient Grab</h3>
                                                 <p>Grab all of the ingredients that are mentioned in the video.</p>*/}
                                                 <div className="conveyor-belt-container words">
                                                     <div
                                                         className="conveyor-belt-header row no-gutters align-items-center justify-content-end">
                                                         {this.audio ? (
                                                             <div class="col-auto audio">
-                                                                <AudioButton
-                                                                    label={""}
-                                                                    audioSrc={this.audio}
-                                                                    styling={"button-audio button-lg attention"}
-                                                                />
+                                                                {this.renderAudioButton()}
                                                             </div>
                                                         ) : (
                                                             <React.Fragment/>
                                                         )}
                                                         <div className="col-12 col-md">
                                                             <div className="word-box">
+                                                                {this.renderCountdown()}
 
-                                                                {this.renderWordBox()}
                                                             </div>
                                                         </div>
                                                         <div className="col-auto">
@@ -385,7 +479,8 @@ class ConveyorBelt extends Component {
 
                                         <div className="col-12 col-sm-auto order-sm-3 ">
                                             {this.state.complete ?
-                                                this.props.forwardArrow :       <button disabled className="act-next bg-secondary " aria-pressed="true"  ><span
+                                                this.props.forwardArrow :
+                                                <button disabled className="act-next bg-secondary " aria-pressed="true"><span
                                                     className="direction-icon"/>
                                                 </button>}
                                         </div>
@@ -401,9 +496,26 @@ class ConveyorBelt extends Component {
                         </div>
                     </div>
                 </div>
+
             </React.Fragment>
         );
     }
 }
 
 export default ConveyorBelt;
+
+function shuffle(obj1, obj2) {
+    var index = obj1.length;
+    var rnd, tmp1, tmp2;
+
+    while (index) {
+        rnd = Math.floor(Math.random() * index);
+        index -= 1;
+        tmp1 = obj1[index];
+        tmp2 = obj2[index];
+        obj1[index] = obj1[rnd];
+        obj2[index] = obj2[rnd];
+        obj1[rnd] = tmp1;
+        obj2[rnd] = tmp2;
+    }
+}

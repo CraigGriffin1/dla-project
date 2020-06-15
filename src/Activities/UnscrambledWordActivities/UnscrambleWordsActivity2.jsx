@@ -16,7 +16,7 @@ class UnscrambleWordsActivity2 extends React.Component {
         return (
 
             <UnscrambleWord
-                pageTitle="Unscramble The Words (2)"
+                pageTitle="Type the Word"
                 words={["mango", "lemon", "whipped cream"]}
                 forwardArrow={this.props.forwardArrow}
                 backArrow={this.props.backArrow}

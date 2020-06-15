@@ -17,7 +17,7 @@ class CompleteParagraphActivity3 extends React.Component{
 
             <CompleteTheParagraph
                 pageTitle="Mango Lemonade (2)"
-                pageImage="https://createmindfully.com/wp-content/uploads/2019/01/mango-lemonade-close-up-500x500.jpg"
+                pageImage="https://calories-info.com/site/assets/files/1173/mango.650x0.jpg"
                 pageSoundClip={Mango2}
                 expectedValues={[["Peel", "Cut", "Blend", "Add", "Blend"]]}
                 labelValues={["Peel", "Cut", "Blend", "Add", "Blend"]}

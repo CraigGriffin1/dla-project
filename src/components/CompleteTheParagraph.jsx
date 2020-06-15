@@ -177,8 +177,8 @@ class CompleteTheParagraph extends Component {
                                     <div className="row">
                                         <div className="col-12 text-center">
                                             <h3>{this.props.pageTitle}</h3>
-                                            <p>Drag and drop the words to complete the paragraph.</p>
-                                            <img width="50%" height="50%" class="img-fluid"
+
+                                            <img width="35%" height="50%" class="img-fluid"
                                                  src={this.props.pageImage}/>
 
                                             {this.audio ? (

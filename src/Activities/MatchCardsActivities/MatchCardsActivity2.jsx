@@ -20,8 +20,8 @@ class MatchCardsActivity2 extends React.Component{
             <MatchCards
                 pageTitle="Kitchen Utensils and Actions"
                 matchesRequired={2}
-                matchPhrases={["http://clipart-library.com/image_gallery/n893303.png", "Mix", "http://clipart-library.com/image_gallery/215573.png", "Decorate"]}
-                correctPairs={[["http://clipart-library.com/image_gallery/n893303.png","mix"], ["http://clipart-library.com/image_gallery/215573.png","decorate"]]}
+                matchPhrases={["https://toppng.com/uploads/preview/calphalon-wooden-spoon-wooden-spoon-transparent-115633452264rso3675u6.png", "Mix", "https://www.clipartmax.com/png/middle/29-293185_food-cherry-cherry-png.png", "Decorate"]}
+                correctPairs={[["https://toppng.com/uploads/preview/calphalon-wooden-spoon-wooden-spoon-transparent-115633452264rso3675u6.png","mix"], ["https://www.clipartmax.com/png/middle/29-293185_food-cherry-cherry-png.png","decorate"]]}
                 forwardArrow = {this.props.forwardArrow}
                 backArrow = {this.props.backArrow}
             />

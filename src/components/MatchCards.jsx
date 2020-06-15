@@ -58,7 +58,7 @@ class MatchCards extends Component {
                 text += (images[i].src);
             }
         } else {
-            text = evt.currentTarget.innerHTML.substring(10).slice(91,-6);
+            text = evt.currentTarget.innerHTML.substring(10).slice(94,-10);
 
         }
 
@@ -235,7 +235,7 @@ function MatchElem(props) {
                 <div className="contents" onClick={props.onClick}>
                     <div className="cardFront memory-card1 memory-open size-xs"/>
                     {props.text.endsWith(".png") ? <div className="cardBack contents size-xs"><img width="95%" src={props.text} /></div>:
-                        <div className="cardBack contents size-xs">{props.text}</div>}
+                        <div className="cardBack contents size-xs"><p>{props.text}</p></div>}
 
 
                 </div>

@@ -17,22 +17,26 @@ class Complete extends React.Component {
                                     <div className="col-12 text-center">
                                         <h2>Well Done!</h2>
 
-                                        <p>You have successfully managed to complete this set of challenges
+                                        <img src="https://lh3.googleusercontent.com/proxy/MSwp8xuW-VHrkfx7DIhtl8zh9VLpfbqYykq24BHOouv4NUzodkXLRDGWvGOZAanW--a1ee5p6ZKAebuwTROnv24JM8ud1Jc" />
+
+
                                             <hr/>
-                                        </p>
-                                            <p>
+
+
 
                                                 {this.props.playAgain}
 
-                                            </p>
-                                            <p>
+
+
+
+
                                                 {this.props.goBack}
-                                            </p>
-                                            <p>
+
+
                                                 <button type="button" className="act-next attention bg-success btn-lg" onClick={() => window.location.href='https://www.klik2learn.com/'}>Return to
                                                     Digital Hub
                                                 </button>
-                                            </p>
+
                                     </div>
                                 </div>
 
