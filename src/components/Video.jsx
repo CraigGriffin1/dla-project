@@ -106,7 +106,7 @@ class Video extends Component {
                                         <div className="row no-gutters act-end-nav justify-content-center">
 
 
-                                            <div className="col-12 col-sm-auto order-sm-3 ">
+                                            <div className="col-auto order-3">
                                                 {this.props.forwardArrow}
 
                                             </div>
