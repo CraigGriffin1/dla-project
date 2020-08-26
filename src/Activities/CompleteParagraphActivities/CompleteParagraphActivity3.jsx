@@ -19,8 +19,8 @@ class CompleteParagraphActivity3 extends React.Component{
                 pageTitle="Mango Lemonade (2)"
                 pageImage="https://calories-info.com/site/assets/files/1173/mango.650x0.jpg"
                 pageSoundClip={Mango2}
-                expectedValues={[["Peel", "Cut", "Blend", "Add", "Blend"]]}
-                labelValues={["Peel", "Cut", "Blend", "Add", "Blend"]}
+                expectedValues={[["Peel", "cut", "blend", "Add", "blend"]]}
+                labelValues={["Peel", "cut", "blend", "Add", "blend"]}
                 paragraph="<<>> it, <<>> it into small pieces and <<>> it. <<>> the lemon juice and <<>> again."
                 forwardArrow = {this.props.forwardArrow}
                 backArrow = {this.props.backArrow}
