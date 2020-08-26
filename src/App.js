@@ -175,7 +175,7 @@ export default App;
  */
 function createForwardArrow(page) {
     return (<Link to={page}>
-        <button className="navbtn next"><span
+        <button className="navbtn next attention"><span
             className=""/>
         </button>
     </Link>);
