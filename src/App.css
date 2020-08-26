@@ -22057,7 +22057,8 @@ button.selected.correct,
     color: white;
     padding: 0.2em .5em;
     -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2)
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 5em;
 }
 
 .droptarget {

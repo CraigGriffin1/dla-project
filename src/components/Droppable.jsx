@@ -47,6 +47,9 @@ class Droppable extends React.Component {
         width = " width-4em";
     }
 
+
+
+
     var elementIn = this.state.elementIn;
     // for (var i = 0; i < elementsIn.length; i++) {
     //     //console.log(this.props.name);

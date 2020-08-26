@@ -134,16 +134,13 @@ class CompleteTheParagraph extends Component {
 
     render() {
 
-        var showAudio = null;
-        var showDualAudio = null;
-
 
         var draggables = this.labelsForDraggables.map(
             (label, index) => {
                 return (
                     <div key={index} className="dragContainerWrapper ">
-                        <div className="ddcontainer ">
-              <span className="ddcontainersource ">
+                        <div className="ddcontainer dd-word width-5em">
+              <span className="ddcontainersource   width-5em">
                 <Draggable key={label} targetKey={label} label={label}/>
               </span>
                         </div>

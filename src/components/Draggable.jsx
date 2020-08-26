@@ -52,6 +52,8 @@ function DragContent(props) {
         width = " width-5em";
     }
 
+
+
     return <span className={props.big ? ("dragContainer dd-word width-6em height-2lines") : (props.paragraph ? ("dragContainer dd-word" + width) : ("dragContainer"))}>{(props.big || props.paragraph) ? (<p>{props.label}</p>) : (props.label)}</span>
 }
 
