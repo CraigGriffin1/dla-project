@@ -175,8 +175,8 @@ export default App;
  */
 function createForwardArrow(page) {
     return (<Link to={page}>
-        <button className="act-next attention bg-success "><span
-            className="direction-icon"/>
+        <button className="navbtn next"><span
+            className=""/>
         </button>
     </Link>);
 }
@@ -189,8 +189,8 @@ function createForwardArrow(page) {
  */
 function createBackArrow(page) {
     return (<Link to={page}>
-        <button className="act-prev bg-success">
-            <span className="direction-icon"/></button>
+        <button className="navbtn prev">
+            <span className=""/></button>
     </Link>);
 }
 

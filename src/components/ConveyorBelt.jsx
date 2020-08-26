@@ -474,14 +474,13 @@ class ConveyorBelt extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="row no-gutters act-end-nav justify-content-end">
+                                    <div className="row no-gutters act-end-nav justify-content-center">
 
 
                                         <div className="col-12 col-sm-auto order-sm-3 ">
                                             {this.state.complete ?
                                                 this.props.forwardArrow :
-                                                <button disabled className="act-next bg-secondary " aria-pressed="true"><span
-                                                    className="direction-icon"/>
+                                                <button disabled className="navbtn next navbtn-disabled " aria-pressed="true"><span/>
                                                 </button>}
                                         </div>
 

@@ -103,7 +103,7 @@ class Video extends Component {
                                                     /></div>
                                             </div>
                                         </div>
-                                        <div className="row no-gutters act-end-nav justify-content-end">
+                                        <div className="row no-gutters act-end-nav justify-content-center">
 
 
                                             <div className="col-12 col-sm-auto order-sm-3 ">
