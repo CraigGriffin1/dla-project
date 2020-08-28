@@ -1,8 +1,5 @@
 import React, {Component} from "react";
-import AudioButton from "./AudioButton";
 
-import MyComponentWithSound from "./Sound";
-import cookies from '../img/cookies.png'
 
 class ConveyorBelt extends Component {
     constructor(props) {
@@ -113,7 +110,7 @@ class ConveyorBelt extends Component {
                                 "box " + (this.state.liftBox && i === 2 ? " lift " : "")
                             }
                         >
-                            {!this.props.image ? this.state.beltItems[i] : <img width="50%"
+                            {!this.props.image ? this.state.beltItems[i] : <img width="58%"
                                                                                 src={this.dict[this.state.beltItems[i]]}/>}
                             {/*<img width="55%" src={this.state.beltItems[i] }/>*/}
                             {/**/}

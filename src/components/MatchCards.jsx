@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import MatchPairs from "./MatchPairs";
+import knifeImg from "../img/knife.png"
 
 // Game Component - Cards facing down, click to flip. Find the pairs
 // ==============================================

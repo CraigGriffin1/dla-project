@@ -175,7 +175,7 @@ class CompleteTheParagraph extends Component {
                                         <div className="col-12 text-center">
                                             <h3>{this.props.pageTitle}</h3>
 
-                                            <img width="35%" height="50%" class="img-fluid"
+                                            <img width="25%" class="img-fluid"
                                                  src={this.props.pageImage}/>
 
                                             {this.audio ? (

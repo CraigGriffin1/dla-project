@@ -4,6 +4,7 @@ import '../../App.css';
 
 import CompleteTheParagraph from "../../components/CompleteTheParagraph";
 import mango3 from '../../soundclips/mango3.m4a'
+import mangoImg from '../../img/mango_lemonade.png'
 class CompleteParagraphActivity4 extends React.Component {
 
     constructor(props) {
@@ -15,7 +16,7 @@ class CompleteParagraphActivity4 extends React.Component {
 
             <CompleteTheParagraph
                 pageTitle="Mango Lemonade (3)"
-                pageImage="https://assets.myfoodandfamily.com/adaptivemedia/rendition/100652615_1500x1000.jpg?id=f7f87da633e7066c567b1e4f59c4eccc2858ebb3&ht=650&wd=1004"
+                pageImage={mangoImg}
                 pageSoundClip={mango3}
                 expectedValues={[["Boil", "melts", "pour", "shake", "enjoy"]]}
                 labelValues={["Boil", "melts", "pour", "shake", "enjoy"]}
