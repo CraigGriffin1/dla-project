@@ -17,7 +17,7 @@ class Complete extends React.Component {
                                     <div className="col-12 text-center">
                                         <h2>Well Done!</h2>
 
-                                        <img src="https://files.schudio.com/gillibrand/images/blog/great-effort-well-done-stickers-2155-p.png" />
+                                        <img src="https://k2l.bndry.co.uk/dla/img/well-done.png" />
 
 
                                             <hr/>
