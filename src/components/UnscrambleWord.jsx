@@ -84,7 +84,7 @@ class ScrambledWord extends React.Component {
                 <input type="text" value={this.state.value} onChange={this.handleChange}/>
 
                 <button
-                     type="submit" onClick={this.handleSubmit}>Ok</button>
+                     type="submit" onClick={this.handleSubmit}>OK</button>
 
                     {/*this.state.attempts >= 3 ? */}
                     <button className="bg-warning" onClick={this.handleHint} type="submit">?</button>
